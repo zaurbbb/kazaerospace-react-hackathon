@@ -52,10 +52,12 @@
 
 html {
   font-size: 25px;
+  padding: 1rem 4rem;
 }
 
 body {
   font-family: "MontserratRegular", sans-serif !important;
+  padding: 1rem 4rem;
 }
 
 @media (max-width: 768px) {

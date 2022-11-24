@@ -1,8 +1,18 @@
+import Header from "./components/elements/Header/Header";
+
 function App() {
   return (
-    <div>
-      Hackathon
-    </div>
+    <>
+        <header>
+            <Header/>
+        </header>
+        <main>
+
+        </main>
+        <footer>
+
+        </footer>
+    </>
   );
 }
 
