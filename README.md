@@ -11,7 +11,7 @@
 [**OnDuken**](https://github.com/Bioneisme/kazaerospace_hackathon_backend) - Front-End part of platform for finding products in various stores and
 view stores on the map.
 
-Live demo of Front-End part: https://zaurbbb.github.io/polaris-react-hackathon/
+Live demo of Front-End part: https://zaurbbb.github.io/kazaerospace-react-hackathon/
 
 *The technical task was provided by [KazAeroSpace](https://kazaerospace.kz/), during [AITUHackDay: GIS Technologies](http://hackaton.astanait.edu.kz/).*
 
