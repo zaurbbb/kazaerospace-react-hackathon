@@ -1,18 +1,19 @@
 import Header from "./components/elements/Header/Header";
+import Footer from "./components/elements/Footer/Footer";
+import HomePage from "./components/pages/HomePage/HomePage";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 function App() {
   return (
-    <>
-        <header>
-            <Header/>
-        </header>
+    <BrowserRouter>
+        <Header/>
         <main>
-
+            <Routes>
+                <Route path="/" element={<HomePage/>}/>
+            </Routes>
         </main>
-        <footer>
-
-        </footer>
-    </>
+        <Footer/>
+    </BrowserRouter>
   );
 }
 
