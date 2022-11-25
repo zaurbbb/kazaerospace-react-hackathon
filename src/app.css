@@ -11,19 +11,39 @@ body {
   justify-content: center;
   align-items: center;
 }
+.button_primary {
+  background: #FC4D4D;
+  color: white;
+}
+.button_primary-outline {
+  border: px solid #FC4D4D;
+}
+.button_secondary {
+  background: #AFAFAF;
+  color: white;
+}
+.button_secondary-outline {
+  border: 2px solid #AFAFAF;
+  color: #AFAFAF;
+  background: white;
+}
+.button_secondary-outline:hover {
+  border: 3px solid #FC4D4D;
+  color: #FC4D4D;
+}
 .button_light {
   background: white;
   color: #484848;
 }
-.button_danger {
-  background: #FC4D4D;
-  color: white;
+.button_dark {
+  background: #000000;
+  color: #AFAFAF;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 3rem;
   margin: 1rem 0 3rem 0;
   justify-content: space-between;
 }

@@ -1,4 +1,10 @@
+//импорт модулей
 import React, {useEffect, useState} from 'react';
+import {NavLink} from "react-router-dom";
+
+//импорт компонентов
+import API from "../../../../api";
+import Login from "../../Modal/LoginModal/Login";
 
 //импорт стилей
 import css from './MainNavbar.module.sass';
@@ -11,8 +17,9 @@ import ArrowIcon from './images/arrow_icon.svg';
 import HeartIcon from './images/heart_icon.svg';
 import BasketIcon from './images/basket_icon.svg';
 import ProfileIcon from './images/profile_icon.svg';
-import API from "../../../../api";
-import Login from "../../Modal/LoginModal/Login";
+
+
+
 
 
 const MainNavbar = () => {
@@ -66,10 +73,12 @@ const MainNavbar = () => {
     return (
         <div className={css.Container}>
             <div className={css.LogoBlock}>
-                <img src={OnDukenLogo} alt="site's logo"/>
+                <NavLink to='/'>
+                    <img src={OnDukenLogo} alt="site's logo"/>
+                </NavLink>
             </div>
             <div className={css.CatalogBlock}>
-                <button className='button button_danger'>
+                <button className='button button_primary'>
                     <img src={CatalogIcon} alt="icon"/> Каталог
                 </button>
             </div>

@@ -59,21 +59,7 @@ const MainInfo = () => {
                 </Swiper>
             </div>
             <div>
-                <Swiper
-                    slidesPerView={1}
-                    loop={true}
-                    pagination={true}
-                    modules={[Pagination, Navigation]}
-                    className='swiper-secondary'
-                >
-                    <SwiperSlide className='swiper-slide swiper-slide-secondary'>
-                        <img src={Rectangle2} alt=""/>
-                    </SwiperSlide>
-                    <div>
-                        <SliderPrevButton/>
-                        <SliderNextButton/>
-                    </div>
-                </Swiper>
+                <img src={Rectangle2} alt=""/>
             </div>
             <div>
                 <img src={Frame1} alt=""/>

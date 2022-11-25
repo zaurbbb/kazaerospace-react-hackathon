@@ -10,7 +10,7 @@ import HomePage from './components/pages/HomePage/HomePage';
 //импорт стилей
 import './app.sass'
 import LogoutPage from "./components/pages/LogoutPage/LogoutPage";
-import MapPage from "./components/pages/MapPage/MapPage";
+import ProductPage from "./components/pages/ProductPage/ProductPage";
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<HomePage/>}/>
                 <Route path="/logout" element={<LogoutPage/>}/>
-                <Route path="/map" element={<MapPage/>}/>
+                <Route path="/map" element={<ProductPage/>}/>
             </Routes>
         </main>
         <Footer/>

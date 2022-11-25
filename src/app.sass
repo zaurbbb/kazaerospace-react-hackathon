@@ -12,19 +12,33 @@ body
   display: flex
   justify-content: center
   align-items: center
+  &_primary
+    background: $primary
+    color: white
+  &_primary-outline
+    border: px solid $primary
+  &_secondary
+    background: $lightSecondary
+    color: white
+  &_secondary-outline
+    border: 2px solid $lightSecondary
+    color: $lightSecondary
+    background: white
+    &:hover
+      border: 3px solid $primary
+      color: $primary
   &_light
     background: white
     color: #484848
-  &_danger
-    background: $danger
-    color: white
-
+  &_dark
+    background: #000000
+    color: $lightSecondary
 
 //главные блоки на странице
 main
   display: flex
   flex-direction: column
-  gap: 4rem
+  gap: 3rem
   margin: 1rem 0 3rem 0
   justify-content: space-between
 
@@ -75,4 +89,4 @@ main
   border-radius: 1rem!important
 
 .swiper-pagination-bullet-active
-  background: $danger!important
+  background: $primary!important

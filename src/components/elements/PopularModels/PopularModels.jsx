@@ -1,5 +1,6 @@
 //импорт модулей
 import React from 'react';
+import {NavLink} from "react-router-dom";
 
 //импорт стилей
 import css from './PopularModels.module.sass';
@@ -45,7 +46,9 @@ const PopularReviews = () => {
             <div className={css.CardsBlock}>
                 {DATA_FOR_REVIEWS.map((item) => (
                     <div className={css.Card}>
-                        <div><img src={item.img} alt=""/></div>
+                        <div>
+                            <NavLink to='/map'><img src={item.img} alt=""/></NavLink>
+                        </div>
                         <div>{item.title}</div>
                         <div>{item.price}</div>
                     </div>

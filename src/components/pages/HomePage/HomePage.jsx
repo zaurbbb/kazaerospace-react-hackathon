@@ -12,9 +12,9 @@ const HomePage = () => {
     return (
         <>
             <MainInfo/>
-            <PopularModels/>
+            <PopularModels text="Популярные модели"/>
             <VideoReviews/>
-            <PopularReviews/>
+            <PopularReviews text="Популярные отзывы"/>
             <AboutSection/>
         </>
     );

@@ -20,24 +20,27 @@ import 'swiper/css/navigation';
 //коллекция данных для слайдера
 const DATA_FOR_REVIEWS = [
     {
-        'product_title': 'MacBook Air 12',
-        'product_icon': 'https://i.ibb.co/dkP7DGy/Group-53.png"',
+        'id': 1,
+        'product_title': 'Apple iPhone 14 128Gb голубой',
+        'product_icon': 'https://i.ibb.co/J2zM9ps/Group-20.png',
         'rating_value': 4,
         'review_text': 'Очень довольна покупкой! Спасибо сервису за быструю доставку и приятное обслуживание. Приехал в отличном состоянии.',
         'user_icon': 'https://i.ibb.co/N7gg388/Ellipse-10.png',
         'user_name': 'Мерей Әбдiкарiм',
     },
     {
-        'product_title': 'MacBook Air 12',
-        'product_icon': 'https://i.ibb.co/dkP7DGy/Group-53.png"',
+        'id': 2,
+        'product_title': 'Apple iPhone 14 128Gb голубой',
+        'product_icon': 'https://i.ibb.co/J2zM9ps/Group-20.png',
         'rating_value': 4,
         'review_text': 'Очень довольна покупкой! Спасибо сервису за быструю доставку и приятное обслуживание. Приехал в отличном состоянии.',
         'user_icon': 'https://i.ibb.co/N7gg388/Ellipse-10.png',
         'user_name': 'Мерей Әбдiкарiм',
     },
     {
-        'product_title': 'MacBook Air 12',
-        'product_icon': 'https://i.ibb.co/dkP7DGy/Group-53.png"',
+        'id': 3,
+        'product_title': 'Apple iPhone 14 128Gb голубой',
+        'product_icon': 'https://i.ibb.co/J2zM9ps/Group-20.png',
         'rating_value': 4,
         'review_text': 'Очень довольна покупкой! Спасибо сервису за быструю доставку и приятное обслуживание. Приехал в отличном состоянии.',
         'user_icon': 'https://i.ibb.co/N7gg388/Ellipse-10.png',
@@ -45,10 +48,10 @@ const DATA_FOR_REVIEWS = [
     },
 ];
 
-const PopularReviews = () => {
+const PopularReviews = (props) => {
     return (
         <section className={css.Container}>
-            <h1>Популярные отзывы</h1>
+            <h1>{props.text}</h1>
             <Swiper
                 slidesPerView={3}
                 a
@@ -57,7 +60,7 @@ const PopularReviews = () => {
                 className='swiper-review'
             >
                 {DATA_FOR_REVIEWS.map((item) => (
-                    <SwiperSlide className='swiper-slide-review'>
+                    <SwiperSlide className='swiper-slide-review' key={item.id}>
                         <Review
                             product_title={item.product_title}
                             product_icon={item.product_icon}
@@ -65,6 +68,7 @@ const PopularReviews = () => {
                             user_icon={item.user_icon}
                             user_name={item.user_name}
                             rating_value={item.rating_value}
+                            key={item.id}
                         />
                     </SwiperSlide>
                 ))}
