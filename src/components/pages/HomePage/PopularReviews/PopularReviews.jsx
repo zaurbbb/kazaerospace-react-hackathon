@@ -17,6 +17,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
+//коллекция данных для слайдера
 const DATA_FOR_REVIEWS = [
     {
         'product_title': 'MacBook Air 12',
@@ -43,6 +44,7 @@ const DATA_FOR_REVIEWS = [
         'user_name': 'Мерей Әбдiкарiм',
     },
 ];
+
 const PopularReviews = () => {
     return (
         <section className={css.Container}>
