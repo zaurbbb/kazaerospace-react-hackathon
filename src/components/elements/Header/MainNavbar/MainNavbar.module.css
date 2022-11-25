@@ -94,5 +94,15 @@
 .ButtonsBlock div img {
   height: 24px;
 }
+.ButtonsBlock div:hover {
+  cursor: pointer;
+}
+.ButtonsBlock div:hover p {
+  color: #FC4D4D;
+  font-weight: 900;
+}
+.ButtonsBlock div:hover img {
+  fill: #FC4D4D;
+}
 
 /*# sourceMappingURL=MainNavbar.module.css.map */
