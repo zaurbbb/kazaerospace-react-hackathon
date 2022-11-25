@@ -2,11 +2,11 @@
 import React from 'react';
 
 //импорт стилей
-import css from './SecondaryNavbar.module.sass'
+import css from './SecondaryNavbar.module.sass';
 
 //импорт стилей
-import LocationIcon from './images/location_icon.svg'
-import DarkThemeIcon from './images/dark_theme_icon.svg'
+import LocationIcon from './images/location_icon.svg';
+import DarkThemeIcon from './images/dark_theme_icon.svg';
 import {FormControl, MenuItem, Select} from "@mui/material";
 
 const SecondaryNavbar = () => {

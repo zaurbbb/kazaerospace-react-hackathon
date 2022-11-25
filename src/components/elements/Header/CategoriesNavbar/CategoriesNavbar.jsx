@@ -2,7 +2,7 @@
 import React from 'react';
 
 //импорт стилей
-import css from './CategoriesNavbar.module.sass'
+import css from './CategoriesNavbar.module.sass';
 
 
 const CategoriesNavbar = () => {

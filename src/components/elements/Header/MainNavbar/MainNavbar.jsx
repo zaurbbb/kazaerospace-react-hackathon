@@ -2,16 +2,16 @@
 import React from 'react';
 
 //импорт стилей
-import css from './MainNavbar.module.sass'
+import css from './MainNavbar.module.sass';
 
 //импорт изображений
-import OnDukenLogo from './images/onduken_logo.svg'
-import CatalogIcon from './images/katalog_icon.svg'
-import SearchIcon from './images/search_icon.svg'
-import ArrowIcon from './images/arrow_icon.svg'
-import HeartIcon from './images/heart_icon.svg'
-import BasketIcon from './images/basket_icon.svg'
-import ProfileIcon from './images/profile_icon.svg'
+import OnDukenLogo from './images/onduken_logo.svg';
+import CatalogIcon from './images/katalog_icon.svg';
+import SearchIcon from './images/search_icon.svg';
+import ArrowIcon from './images/arrow_icon.svg';
+import HeartIcon from './images/heart_icon.svg';
+import BasketIcon from './images/basket_icon.svg';
+import ProfileIcon from './images/profile_icon.svg';
 
 
 const MainNavbar = () => {
