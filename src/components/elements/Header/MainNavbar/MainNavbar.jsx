@@ -12,17 +12,28 @@ import HeartIcon from './images/heart_icon.svg';
 import BasketIcon from './images/basket_icon.svg';
 import ProfileIcon from './images/profile_icon.svg';
 import API from "../../../../api";
+import Login from "../../Modal/LoginModal/Login";
 
 
 const MainNavbar = () => {
     const [value, setValue] = useState('');
+    const [username, setUsername] = useState();
     const [isOpen, setIsOpen] = useState(true);
     const [products, setProducts] = useState([]);
+    const [openModal, setOpenModal] = useState(false);
+
     useEffect(() => {
         async function fetch() {
             try {
                 const res = await API.get('/products/getAllProducts');
                 setProducts(res.data);
+                const user = localStorage.getItem("user");
+                if (user) {
+                    const auth = await API.post('/users/validate', {
+                        jwt: JSON.parse(user).token
+                    });
+                    setUsername(auth.data.user.name);
+                }
             } catch (e) {
                 console.log(e)
             }
@@ -43,6 +54,14 @@ const MainNavbar = () => {
     const inputClickHandler = () => {
         setIsOpen(true)
     }
+
+    const handleClickOpen = () => {
+        setOpenModal(true);
+    };
+
+    const handleClickClose = () => {
+        setOpenModal(false);
+    };
 
     return (
         <div className={css.Container}>
@@ -97,10 +116,17 @@ const MainNavbar = () => {
                     <img src={BasketIcon} alt="BasketIcon"/>
                     <p>Корзина</p>
                 </div>
-                <div>
+                {username ? <div>
                     <img src={ProfileIcon} alt="ProfileIcon"/>
-                    <p>Профиль</p>
-                </div>
+                    <p>{username}</p>
+                </div> : <div onClick={handleClickOpen}>
+                    <img src={ProfileIcon} alt="ProfileIcon"/>
+                    <p>Войти</p>
+                </div>}
+                <Login
+                    open={openModal}
+                    handleClose={handleClickClose}
+                />
             </div>
         </div>
     );

@@ -9,6 +9,7 @@ import HomePage from "./components/pages/HomePage/HomePage";
 
 //импорт стилей
 import './app.sass'
+import LogoutPage from "./components/pages/LogoutPage/LogoutPage";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <main>
             <Routes>
                 <Route path="/" element={<HomePage/>}/>
+                <Route path="/logout" element={<LogoutPage/>}/>
             </Routes>
         </main>
         <Footer/>

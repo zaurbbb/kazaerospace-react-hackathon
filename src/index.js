@@ -2,6 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {createTheme, ThemeProvider} from "@mui/material";
+import store from "./redux/store";
 
 //импорт компонентов
 import App from './App';
@@ -9,6 +10,7 @@ import App from './App';
 //импорт стилей
 import './index.css'
 import './reset.css'
+import {Provider} from "react-redux";
 
 const THEME = createTheme({
     palette: {
@@ -115,7 +117,9 @@ const THEME = createTheme({
 });
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <ThemeProvider theme={THEME}>
-        <App/>
-    </ThemeProvider>
+    <Provider store={store}>
+        <ThemeProvider theme={THEME}>
+            <App/>
+        </ThemeProvider>
+    </Provider>
 );
