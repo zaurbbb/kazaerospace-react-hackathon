@@ -1,4 +1,3 @@
-//импорт библиотек
 import React, {useEffect, useState} from 'react';
 
 //импорт стилей

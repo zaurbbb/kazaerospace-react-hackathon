@@ -1,4 +1,4 @@
-//импорт из библиотек
+//импорт из модулей
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {createTheme, ThemeProvider} from "@mui/material";

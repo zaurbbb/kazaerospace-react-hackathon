@@ -2,47 +2,38 @@
 @font-face {
   font-family: "MontserratBlack";
   src: url("./fonts/Montserrat-Black.ttf") format("truetype");
-  font-weight: normal;
 }
 @font-face {
   font-family: "MontserratBold";
   src: url("./fonts/Montserrat-Bold.ttf") format("truetype");
-  font-weight: normal;
 }
 @font-face {
   font-family: "MontserratExtraBold";
   src: url("./fonts/Montserrat-ExtraBold.ttf") format("truetype");
-  font-weight: normal;
 }
 @font-face {
   font-family: "MontserratExtraLight";
   src: url("./fonts/Montserrat-ExtraLight.ttf") format("truetype");
-  font-weight: normal;
 }
 @font-face {
   font-family: "MontserratLight";
   src: url("./fonts/Montserrat-Light.ttf") format("truetype");
-  font-weight: normal;
 }
 @font-face {
   font-family: "MontserratMedium";
   src: url("./fonts/Montserrat-Medium.ttf") format("truetype");
-  font-weight: normal;
 }
 @font-face {
   font-family: "MontserratRegular";
   src: url("./fonts/Montserrat-Regular.ttf") format("truetype");
-  font-weight: normal;
 }
 @font-face {
   font-family: "MontserratSemiBold";
   src: url("./fonts/Montserrat-SemiBold.ttf") format("truetype");
-  font-weight: normal;
 }
 @font-face {
   font-family: "MontserratThin";
   src: url("./fonts/Montserrat-Thin.ttf") format("truetype");
-  font-weight: normal;
 }
 *,
 *::before,
@@ -84,7 +75,7 @@ html {
 /* эффект при наведении на двигающийся скролббар*/
 ::-webkit-scrollbar-thumb:hover {
   opacity: 1;
-  background: #6495ED;
+  background: #FC4D4D;
 }
 
 /*# sourceMappingURL=index.css.map */
