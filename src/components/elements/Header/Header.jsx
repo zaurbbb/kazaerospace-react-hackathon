@@ -8,14 +8,14 @@ import MainNavbar from "./MainNavbar/MainNavbar";
 
 const Header = () => {
     return (
-        <>
+        <header>
             {/*навбар с кнопками смены языка, выбора региона и смены темы*/}
             <SecondaryNavbar/>
             {/*навбар с кнопкой каталога, полем поиска, ссылками на страницы заказов, избранных, корзины и профиля*/}
             <MainNavbar/>
             {/*навбра с основными категриями товаров на сайте*/}
             <CategoriesNavbar/>
-        </>
+        </header>
     );
 };
 

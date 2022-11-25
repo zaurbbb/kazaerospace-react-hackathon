@@ -1,6 +1,9 @@
 .swiper-video-review {
-  width: 90%;
+  width: 53.5rem;
   height: 15rem;
+}
+.swiper-video-review .swiper-pagination-bullet {
+  margin: 0 20px !important;
 }
 
 .swiper-slide-video-review {
@@ -11,7 +14,7 @@
 .video-review-slider-button-prev,
 .video-review-slider-button-next {
   color: #AFAFAF !important;
-  top: 44% !important;
+  top: 35% !important;
   background: #FFFFFF;
   border-radius: 8px;
 }

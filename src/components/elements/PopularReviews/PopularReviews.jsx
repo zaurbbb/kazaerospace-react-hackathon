@@ -6,7 +6,7 @@ import {Navigation} from 'swiper'
 import {Swiper, SwiperSlide} from 'swiper/react';
 
 //импорт кастомных компонентов
-import Review from "../../../elements/Review/Review";
+import Review from "../Review/Review";
 import SliderPrevButton from "./SliderPrevButton/SliderPrevButton";
 import SliderNextButton from "./SliderNextButton/SliderNextButton";
 
