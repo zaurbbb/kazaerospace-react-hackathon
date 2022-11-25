@@ -16,6 +16,7 @@ import Document2 from './images/document2.svg';
 const Footer = () => {
     return (
         <div className={css.Container}>
+            {/*первый блок футера с контактами*/}
             <div className={css.ContactsBlock}>
                 <div>
                     <img src={OnDukenLogo} alt="OnDukenLogo"/>
@@ -38,6 +39,7 @@ const Footer = () => {
                     Астана, Есиль район, ​проспект Мангилик Ел, 53/1
                 </div>
             </div>
+            {/*второй блок футера со списком ссылок для покупателей*/}
             <div className={css.FooterList}>
                 <ul>
                     <li>Покупателям</li>
@@ -49,6 +51,7 @@ const Footer = () => {
                     <li><a href="#">Возвраты</a></li>
                 </ul>
             </div>
+            {/*третий блок футера со списком ссылок для патрнеров и лицензией*/}
             <div className={css.FooterList}>
                 <ul>
                     <li>Партнерам</li>
@@ -64,6 +67,7 @@ const Footer = () => {
                     </li>
                 </ul>
             </div>
+            {/*четвертый блок футера с соц сетями где мы есть*/}
             <div className={css.FooterList}>
                 <ul>
                     <li>Мы в:</li>
