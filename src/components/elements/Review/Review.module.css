@@ -19,7 +19,7 @@
   text-align: center;
 }
 
-.ProductBlock, .UserBlock {
+.ProductBlock {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -27,9 +27,16 @@
   height: 100%;
   align-items: center;
 }
-.ProductBlock svg, .UserBlock svg {
+.ProductBlock svg {
   width: 20px !important;
   height: 20px !important;
+}
+
+.UserBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
 }
 
 .ProductBlock {

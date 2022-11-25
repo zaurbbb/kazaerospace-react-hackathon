@@ -1,6 +1,6 @@
 //импорт модулей
 import React from 'react';
-import {Rating, Stack} from '@mui/material';
+import {Rating} from '@mui/material';
 
 //импорт стилей
 import css from './Review.module.sass'

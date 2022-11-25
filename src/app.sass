@@ -5,6 +5,7 @@ body
   padding: 1rem 4rem
   background: #F0F1F2
 
+//кнопки на странице
 .button
   border-radius: 8px
   border: none
@@ -17,3 +18,62 @@ body
   &_danger
     background: $danger
     color: white
+
+
+//главные блоки на странице
+main
+  display: flex
+  flex-direction: column
+  gap: 4rem
+  margin: 3rem 0
+  justify-content: space-between
+
+//блок свайпера
+.swiper
+  position: relative!important
+  margin-left: auto
+  margin-right: auto
+//слайд свайпера
+.swiper-slide
+  text-align: center
+  font-size: 18px
+  background: #F0F1F2
+  border: 0.1px solid #F0F1F2
+
+//стрелки для скроллинга свайпера
+.video-review-slider-button-prev,
+.video-review-slider-button-next,
+.review-slider-button-prev,
+.review-slider-button-next
+  width: 1.7rem!important
+  height: 1.7rem!important
+  z-index: 2!important
+
+//позиционирование стрелок для скроллинга свайпера
+.video-review-slider-button-prev
+  left: 1% !important
+.video-review-slider-button-next
+  right: 1% !important
+
+.video-review-slider-button-next,
+.video-review-slider-button-prev
+  &::after
+    font-size: 25px!important
+    font-weight: 700
+
+//пагинация
+.swiper-pagination
+  display: flex!important
+  @include flexAlignment(center, center, center)
+  height: 1rem!important
+  top: 90% !important
+
+.swiper-pagination-bullet
+  width: 10px!important
+  height: 10px!important
+  margin: 0 20px!important
+  transition: 0.2s ease-in-out!important
+  border-radius: 1rem!important
+
+.swiper-pagination-bullet-active
+  background: $danger!important
