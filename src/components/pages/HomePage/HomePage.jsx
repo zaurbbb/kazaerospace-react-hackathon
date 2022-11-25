@@ -5,10 +5,12 @@ import React from 'react';
 import AboutSection from "./AboutSection/AboutSection";
 import PopularReviews from "./PopularReviews/PopularReviews";
 import VideoReviews from "./VideoReviews/VideoReviews";
+import PopularModels from "./PopularModels/PopularModels";
 
 const HomePage = () => {
     return (
         <>
+            <PopularModels/>
             <VideoReviews/>
             <PopularReviews/>
             <AboutSection/>

@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"PopularModels.module.css"}
+{"version":3,"sourceRoot":"","sources":["PopularModels.module.sass","../../../../variables.sass"],"names":[],"mappings":"AAEA;EACE;;AACA;EACE;;;AACJ;EACE;EACA;EACA;;;AAEF;EACE;EACA;EACA;;AACA;EACE,WCCE;EDAF;EACA;EACA;;AACA;EACE;;AACF;EACE;EACA,WCRA;EDSA","file":"PopularModels.module.css"}
