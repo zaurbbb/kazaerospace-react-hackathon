@@ -1,47 +1,47 @@
 @charset "UTF-8";
 @font-face {
   font-family: "MontserratBlack";
-  src: local("MontserratBlack"), url("./fonts/Montserrat-Black.ttf") format("truetype");
+  src: url("./fonts/Montserrat-Black.ttf") format("truetype");
   font-weight: normal;
 }
 @font-face {
   font-family: "MontserratBold";
-  src: local("MontserratBold"), url("./fonts/Montserrat-Bold.ttf") format("truetype");
+  src: url("./fonts/Montserrat-Bold.ttf") format("truetype");
   font-weight: normal;
 }
 @font-face {
   font-family: "MontserratExtraBold";
-  src: local("MontserratExtraBold"), url("./fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  src: url("./fonts/Montserrat-ExtraBold.ttf") format("truetype");
   font-weight: normal;
 }
 @font-face {
   font-family: "MontserratExtraLight";
-  src: local("MontserratExtraLight"), url("./fonts/Montserrat-ExtraLight.ttf") format("truetype");
+  src: url("./fonts/Montserrat-ExtraLight.ttf") format("truetype");
   font-weight: normal;
 }
 @font-face {
   font-family: "MontserratLight";
-  src: local("MontserratLight"), url("./fonts/Montserrat-Light.ttf") format("truetype");
+  src: url("./fonts/Montserrat-Light.ttf") format("truetype");
   font-weight: normal;
 }
 @font-face {
   font-family: "MontserratMedium";
-  src: local("MontserratMedium"), url("./fonts/Montserrat-Medium.ttf") format("truetype");
+  src: url("./fonts/Montserrat-Medium.ttf") format("truetype");
   font-weight: normal;
 }
 @font-face {
   font-family: "MontserratRegular";
-  src: local("MontserratRegular"), url("./fonts/Montserrat-Regular.ttf") format("truetype");
+  src: url("./fonts/Montserrat-Regular.ttf") format("truetype");
   font-weight: normal;
 }
 @font-face {
   font-family: "MontserratSemiBold";
-  src: local("MontserratSemiBold"), url("./fonts/Montserrat-SemiBold.ttf") format("truetype");
+  src: url("./fonts/Montserrat-SemiBold.ttf") format("truetype");
   font-weight: normal;
 }
 @font-face {
   font-family: "MontserratThin";
-  src: local("MontserratThin"), url("./fonts/Montserrat-Thin.ttf") format("truetype");
+  src: url("./fonts/Montserrat-Thin.ttf") format("truetype");
   font-weight: normal;
 }
 *,
@@ -52,12 +52,6 @@
 
 html {
   font-size: 25px;
-  padding: 1rem 4rem;
-}
-
-body {
-  font-family: "MontserratRegular", sans-serif !important;
-  padding: 1rem 4rem;
 }
 
 @media (max-width: 768px) {

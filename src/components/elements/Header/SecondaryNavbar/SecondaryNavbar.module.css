@@ -1,3 +1,33 @@
+.Container {
+  padding: 10px 8rem;
+  background: #F0F1F2;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
 
+.ButtonsGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.ButtonsGroup button {
+  padding: 0 10px;
+  height: 30px;
+  font-size: 0.694rem;
+  font-family: "MontserratRegular", sans-serif;
+  font-weight: 700;
+}
+.ButtonsGroup:first-child img {
+  width: 0.694rem;
+  margin-left: 5px;
+}
+.ButtonsGroup:last-child img {
+  width: 1rem;
+  margin-left: 5px;
+}
+.ButtonsGroup:last-child button:last-child {
+  color: white;
+}
 
 /*# sourceMappingURL=SecondaryNavbar.module.css.map */

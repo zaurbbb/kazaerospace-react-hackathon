@@ -1,1 +1,18 @@
+@import "variables"
+
 body
+  font-family: $montserratRegular
+  padding: 1rem 4rem
+
+.button
+  border-radius: 8px
+  border: none
+  display: flex
+  justify-content: center
+  align-items: center
+  &_light
+    background: white
+    color: #484848
+  &_danger
+    background: $danger
+    color: white

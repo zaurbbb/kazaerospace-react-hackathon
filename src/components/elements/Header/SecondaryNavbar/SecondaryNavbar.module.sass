@@ -1,0 +1,30 @@
+@import "../../../../variables"
+
+.Container
+  padding: 10px 8rem
+  background: #F0F1F2
+  width: 100%
+  display: flex
+  justify-content: space-between
+
+.ButtonsGroup
+  display: flex
+  align-items: center
+  gap: 0.5rem
+  button
+    padding: 0 10px
+    height: 30px
+    font-size: $fs6
+    font-family: $montserratRegular
+    font-weight: 700
+  &:first-child
+    img
+      width: $fs6
+      margin-left: 5px
+  &:last-child
+    img
+      width: $fs4
+      margin-left: 5px
+    button:last-child
+      color: white
+

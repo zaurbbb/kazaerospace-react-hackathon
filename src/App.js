@@ -1,7 +1,15 @@
+//импорт библиотек
+import React from 'react';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+
+//импорт кастомных компонентов
 import Header from "./components/elements/Header/Header";
 import Footer from "./components/elements/Footer/Footer";
 import HomePage from "./components/pages/HomePage/HomePage";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+
+//импорт стилей
+import './app.sass'
+
 
 function App() {
   return (
