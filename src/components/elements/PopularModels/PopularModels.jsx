@@ -1,13 +1,6 @@
 //импорт модулей
 import React from 'react';
 
-//импорт модулей для свайпера
-import {Navigation} from 'swiper'
-import {Swiper, SwiperSlide} from 'swiper/react';
-
-//импорт кастомных компонентов
-import Review from "../../../elements/Review/Review";
-
 //импорт стилей
 import css from './PopularModels.module.sass';
 
@@ -48,7 +41,7 @@ const DATA_FOR_REVIEWS = [
 const PopularReviews = () => {
     return (
         <section className={css.Container}>
-            <h1>Популярные отзывы</h1>
+            <h1>Популярные модели</h1>
             <div className={css.CardsBlock}>
                 {DATA_FOR_REVIEWS.map((item) => (
                     <div className={css.Card}>

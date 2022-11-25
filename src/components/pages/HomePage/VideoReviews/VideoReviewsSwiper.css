@@ -2,6 +2,9 @@
   width: 53.5rem;
   height: 15rem;
 }
+.swiper-video-review .swiper-pagination-bullet {
+  margin: 0 20px !important;
+}
 
 .swiper-slide-video-review {
   width: 50%;
