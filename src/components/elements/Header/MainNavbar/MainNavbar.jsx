@@ -1,5 +1,4 @@
-//импорт модулей
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 //импорт стилей
 import css from './MainNavbar.module.sass';
@@ -12,9 +11,39 @@ import ArrowIcon from './images/arrow_icon.svg';
 import HeartIcon from './images/heart_icon.svg';
 import BasketIcon from './images/basket_icon.svg';
 import ProfileIcon from './images/profile_icon.svg';
+import API from "../../../../api";
 
 
 const MainNavbar = () => {
+    const [value, setValue] = useState('');
+    const [isOpen, setIsOpen] = useState(true);
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        async function fetch() {
+            try {
+                const res = await API.get('/products/getAllProducts');
+                setProducts(res.data);
+            } catch (e) {
+                console.log(e)
+            }
+        }
+
+        fetch();
+    }, []);
+
+    const filteredProducts = products.filter(product => {
+        return product.toLowerCase().includes(value.toLowerCase())
+    })
+
+    const objectClickHandler = (e) => {
+        setValue(e.target.textContent)
+        setIsOpen(false)
+    }
+
+    const inputClickHandler = () => {
+        setIsOpen(true)
+    }
+
     return (
         <div className={css.Container}>
             <div className={css.LogoBlock}>
@@ -26,13 +55,34 @@ const MainNavbar = () => {
                 </button>
             </div>
             <div className={css.InputBlock}>
-                <div className={css.SearchElement}>
-                    <img src={SearchIcon} alt="search icon"/>
-                </div>
-                <input
-                    type="text"
-                    placeholder="Я хочу найти"
-                />
+                <form>
+                    <div className={css.SearchElement}>
+                        <img src={SearchIcon} alt="search icon"/>
+                    </div>
+                    <input
+                        type="text"
+                        placeholder="Я хочу найти"
+                        value={value}
+                        onChange={(event) => setValue(event.target.value)}
+                        onClick={inputClickHandler}
+                    />
+                    <ul className={css.AutoComplete}>
+                        {
+                            value && isOpen
+                                ? filteredProducts.map((object, i) => {
+                                    return (
+                                        <li
+                                            className={css.AutoCompleteItem}
+                                            onClick={objectClickHandler}
+                                            key={i}
+                                        >
+                                            {object}
+                                        </li>
+                                    )
+                                }) : null
+                        }
+                    </ul>
+                </form>
             </div>
             <div className={css.ButtonsBlock}>
                 <div>
