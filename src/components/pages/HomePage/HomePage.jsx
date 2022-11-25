@@ -6,10 +6,9 @@ import AboutSection from "./AboutSection/AboutSection";
 
 const HomePage = () => {
     return (
-        <div>
-
+        <>
             <AboutSection/>
-        </div>
+        </>
     );
 };
 
