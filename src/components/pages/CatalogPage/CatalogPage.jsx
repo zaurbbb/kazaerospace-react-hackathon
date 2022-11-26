@@ -1,10 +1,28 @@
 //импорт библиотек
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 //импорт стилей
 import css from './CatalogPage.module.sass'
 import {Rating} from "@mui/material";
+import API from "../../../api";
+
 const CatalogPage = () => {
+    const [products, setProducts] = useState([]);
+    const num = Math.floor(Math.random() * (1000 - 1) + 1);
+
+    useEffect(() => {
+        async function fetch() {
+            try {
+                const res = await API.get('/products/getAllProducts');
+                setProducts(res.data);
+            } catch (e) {
+                console.log(e)
+            }
+        }
+
+        fetch();
+    }, []);
+
     return (
         <section className={css.Container}>
             <aside>
@@ -93,257 +111,37 @@ const CatalogPage = () => {
 
             </aside>
             <div className={css.CatalogCards}>
-                <div className={css.CardBlock}>
-                    <div>
-                        <img src="https://i.ibb.co/q5WT6y0/Phone1-eb95663bcfd06ff6786f.webp" alt="iphone"/>
-                    </div>
-                    <div>
-                        <h3>
-                            Смартфон Apple iPhone 13 Pro
-                        </h3>
-                        <div>
-                            <Rating
-                                name='read-only'
-                                value={5}
-                                readOnly
-                            />
-                            <p>
-                                4.9
-                            </p>
-                        </div>
+                {
+                    products.slice(num, num+4).map((object, i) => {
+                        return (
+                            <div className={css.CardBlock} key={i}>
+                                <div>
+                                    <img src={object.image} alt={object.title}/>
+                                </div>
+                                <div>
+                                    <h3>
+                                        {object.title}
+                                    </h3>
+                                    <div>
+                                        <Rating
+                                            name='read-only'
+                                            value={5}
+                                            readOnly
+                                        />
+                                        <p>
+                                            4.9
+                                        </p>
+                                    </div>
 
-                    </div>
-                    <div>
-                        <p>485 000₸</p>
-                        <button className='button_primary'>Добавить в корзину</button>
-                    </div>
-                </div>
-                <div className={css.CardBlock}>
-                    <div>
-                        <img src="https://i.ibb.co/q5WT6y0/Phone1-eb95663bcfd06ff6786f.webp" alt="iphone"/>
-                    </div>
-                    <div>
-                        <h3>
-                            Смартфон Apple iPhone 13 Pro
-                        </h3>
-                        <div>
-                            <Rating
-                                name='read-only'
-                                value={5}
-                                readOnly
-                            />
-                            <p>
-                                4.9
-                            </p>
-                        </div>
-
-                    </div>
-                    <div>
-                        <p>485 000₸</p>
-                        <button className='button_primary'>Добавить в корзину</button>
-                    </div>
-                </div>
-                <div className={css.CardBlock}>
-                    <div>
-                        <img src="https://i.ibb.co/q5WT6y0/Phone1-eb95663bcfd06ff6786f.webp" alt="iphone"/>
-                    </div>
-                    <div>
-                        <h3>
-                            Смартфон Apple iPhone 13 Pro
-                        </h3>
-                        <div>
-                            <Rating
-                                name='read-only'
-                                value={5}
-                                readOnly
-                            />
-                            <p>
-                                4.9
-                            </p>
-                        </div>
-
-                    </div>
-                    <div>
-                        <p>485 000₸</p>
-                        <button className='button_primary'>Добавить в корзину</button>
-                    </div>
-                </div>
-                <div className={css.CardBlock}>
-                    <div>
-                        <img src="https://i.ibb.co/q5WT6y0/Phone1-eb95663bcfd06ff6786f.webp" alt="iphone"/>
-                    </div>
-                    <div>
-                        <h3>
-                            Смартфон Apple iPhone 13 Pro
-                        </h3>
-                        <div>
-                            <Rating
-                                name='read-only'
-                                value={5}
-                                readOnly
-                            />
-                            <p>
-                                4.9
-                            </p>
-                        </div>
-
-                    </div>
-                    <div>
-                        <p>485 000₸</p>
-                        <button className='button_primary'>Добавить в корзину</button>
-                    </div>
-                </div>
-                <div className={css.CardBlock}>
-                    <div>
-                        <img src="https://i.ibb.co/q5WT6y0/Phone1-eb95663bcfd06ff6786f.webp" alt="iphone"/>
-                    </div>
-                    <div>
-                        <h3>
-                            Смартфон Apple iPhone 13 Pro
-                        </h3>
-                        <div>
-                            <Rating
-                                name='read-only'
-                                value={5}
-                                readOnly
-                            />
-                            <p>
-                                4.9
-                            </p>
-                        </div>
-
-                    </div>
-                    <div>
-                        <p>485 000₸</p>
-                        <button className='button_primary'>Добавить в корзину</button>
-                    </div>
-                </div>
-                <div className={css.CardBlock}>
-                    <div>
-                        <img src="https://i.ibb.co/q5WT6y0/Phone1-eb95663bcfd06ff6786f.webp" alt="iphone"/>
-                    </div>
-                    <div>
-                        <h3>
-                            Смартфон Apple iPhone 13 Pro
-                        </h3>
-                        <div>
-                            <Rating
-                                name='read-only'
-                                value={5}
-                                readOnly
-                            />
-                            <p>
-                                4.9
-                            </p>
-                        </div>
-
-                    </div>
-                    <div>
-                        <p>485 000₸</p>
-                        <button className='button_primary'>Добавить в корзину</button>
-                    </div>
-                </div>
-                <div className={css.CardBlock}>
-                    <div>
-                        <img src="https://i.ibb.co/q5WT6y0/Phone1-eb95663bcfd06ff6786f.webp" alt="iphone"/>
-                    </div>
-                    <div>
-                        <h3>
-                            Смартфон Apple iPhone 13 Pro
-                        </h3>
-                        <div>
-                            <Rating
-                                name='read-only'
-                                value={5}
-                                readOnly
-                            />
-                            <p>
-                                4.9
-                            </p>
-                        </div>
-
-                    </div>
-                    <div>
-                        <p>485 000₸</p>
-                        <button className='button_primary'>Добавить в корзину</button>
-                    </div>
-                </div>
-                <div className={css.CardBlock}>
-                    <div>
-                        <img src="https://i.ibb.co/q5WT6y0/Phone1-eb95663bcfd06ff6786f.webp" alt="iphone"/>
-                    </div>
-                    <div>
-                        <h3>
-                            Смартфон Apple iPhone 13 Pro
-                        </h3>
-                        <div>
-                            <Rating
-                                name='read-only'
-                                value={5}
-                                readOnly
-                            />
-                            <p>
-                                4.9
-                            </p>
-                        </div>
-
-                    </div>
-                    <div>
-                        <p>485 000₸</p>
-                        <button className='button_primary'>Добавить в корзину</button>
-                    </div>
-                </div>
-                <div className={css.CardBlock}>
-                    <div>
-                        <img src="https://i.ibb.co/q5WT6y0/Phone1-eb95663bcfd06ff6786f.webp" alt="iphone"/>
-                    </div>
-                    <div>
-                        <h3>
-                            Смартфон Apple iPhone 13 Pro
-                        </h3>
-                        <div>
-                            <Rating
-                                name='read-only'
-                                value={5}
-                                readOnly
-                            />
-                            <p>
-                                4.9
-                            </p>
-                        </div>
-
-                    </div>
-                    <div>
-                        <p>485 000₸</p>
-                        <button className='button_primary'>Добавить в корзину</button>
-                    </div>
-                </div>
-                <div className={css.CardBlock}>
-                    <div>
-                        <img src="https://i.ibb.co/q5WT6y0/Phone1-eb95663bcfd06ff6786f.webp" alt="iphone"/>
-                    </div>
-                    <div>
-                        <h3>
-                            Смартфон Apple iPhone 13 Pro
-                        </h3>
-                        <div>
-                            <Rating
-                                name='read-only'
-                                value={5}
-                                readOnly
-                            />
-                            <p>
-                                4.9
-                            </p>
-                        </div>
-
-                    </div>
-                    <div>
-                        <p>485 000₸</p>
-                        <button className='button_primary'>Добавить в корзину</button>
-                    </div>
-                </div>
-
+                                </div>
+                                <div>
+                                    <p>{object.price}₸</p>
+                                    <button className='button_primary'>Добавить в корзину</button>
+                                </div>
+                            </div>
+                        )
+                    })
+                }
             </div>
         </section>
     );
