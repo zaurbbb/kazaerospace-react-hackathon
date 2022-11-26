@@ -1,9 +1,5 @@
 //импорт модулей
 import React, {useCallback, useEffect, useState} from 'react';
-
-//импорт стилей
-import css from './Login.module.sass';
-
 import {
     Button,
     Dialog,
@@ -15,6 +11,11 @@ import {
 } from "@mui/material";
 import {useAppDispatch, useAppSelector} from "../../../../redux/hooks";
 import {login} from "../../../../redux/slices/auth";
+
+//импорт стилей
+import './Login.sass';
+
+//импорт кастом компонентов
 import Register from "../RegisterModal/Register";
 
 const Login = ({open, handleClose}) => {
@@ -60,13 +61,12 @@ const Login = ({open, handleClose}) => {
     return (
         <>
             <Dialog open={open} onClose={handleClose}>
-                <DialogTitle>Log In</DialogTitle>
-                <DialogContentText>
+                <DialogContentText style={{padding: '22px 0 0 24px'}}>
                     <p> Log In </p>
                     <p style={{color: 'red'}}> {error ? message : null} </p>
                 </DialogContentText>
-                <form onSubmit={onFormSubmit} action="" className="pt-4 space-y-3">
-                    <DialogContent>
+                <form onSubmit={onFormSubmit} action="" >
+                    <DialogContent style={{padding: '0 24px 20px 24px'}}>
                         <TextField
                             autoFocus
                             margin="dense"

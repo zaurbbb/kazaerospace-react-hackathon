@@ -59,13 +59,12 @@ const Register = ({open, handleClose}) => {
     return (
         <>
             <Dialog open={open} onClose={handleClose}>
-                <DialogTitle>Sign In</DialogTitle>
-                <DialogContentText>
+                <DialogContentText style={{padding: '22px 0 0 24px'}}>
                     <p> Sign In </p>
                     <p style={{color: 'red'}}> {error ? message : null} </p>
-                </DialogContentText>
+                </DialogContentText >
                 <form onSubmit={onFormSubmit} action="" className="pt-4 space-y-3">
-                    <DialogContent>
+                    <DialogContent style={{padding: '0 24px 20px 24px'}}>
                         <TextField
                             autoFocus
                             margin="dense"
