@@ -1,5 +1,5 @@
 .Container {
-  padding: 10px 8rem;
+  padding: 10px 4rem;
   background: #F0F1F2;
   width: 100%;
   display: flex;
@@ -25,9 +25,6 @@
 .ButtonsGroup:last-child img {
   width: 1rem;
   margin-left: 5px;
-}
-.ButtonsGroup:last-child button:last-child {
-  color: white;
 }
 
 /*# sourceMappingURL=SecondaryNavbar.module.css.map */

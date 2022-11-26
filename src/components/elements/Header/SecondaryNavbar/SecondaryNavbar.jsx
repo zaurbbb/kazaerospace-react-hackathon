@@ -36,9 +36,6 @@ const SecondaryNavbar = () => {
                 <button className='button button_light'>
                     Темная Тема <img src={DarkThemeIcon} alt=""/>
                 </button>
-                <button className='button button_light'>
-                    город Караганда
-                </button>
             </div>
         </div>
     );

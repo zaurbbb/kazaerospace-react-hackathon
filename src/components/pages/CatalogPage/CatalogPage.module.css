@@ -10,7 +10,7 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  height: 31rem;
   gap: 1rem;
 }
 .Container aside div h5 {
