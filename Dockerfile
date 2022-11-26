@@ -5,6 +5,6 @@ ENV PATH="/opt/app/node_modules/.bin:$PATH"
 
 COPY . .
 
-RUN npm ci --production
+RUN npm install
 
 CMD ["npm", "start"]
