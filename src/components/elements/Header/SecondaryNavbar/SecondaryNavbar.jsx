@@ -14,7 +14,7 @@ const SecondaryNavbar = () => {
         <div className={css.Container}>
             <div className={css.ButtonsGroup}>
                 <button className='button button_light'>
-                    город Караганда <img src={LocationIcon} alt=""/>
+                    город Астана <img src={LocationIcon} alt=""/>
                 </button>
                 <FormControl >
                     <Select defaultValue={'ru'}>

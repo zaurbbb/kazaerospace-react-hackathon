@@ -24,6 +24,7 @@ import ProfileIcon from './images/profile_icon.svg';
 
 const MainNavbar = () => {
     const [value, setValue] = useState('');
+    const [id, setId] = useState();
     const [username, setUsername] = useState();
     const [isOpen, setIsOpen] = useState(true);
     const [products, setProducts] = useState([]);
@@ -50,11 +51,12 @@ const MainNavbar = () => {
     }, []);
 
     const filteredProducts = products.filter(product => {
-        return product.toLowerCase().includes(value.toLowerCase())
+        return product.title.toLowerCase().includes(value.toLowerCase())
     })
 
-    const objectClickHandler = (e) => {
+    const objectClickHandler = (e, id) => {
         setValue(e.target.textContent)
+        setId(id);
         setIsOpen(false)
     }
 
@@ -68,6 +70,10 @@ const MainNavbar = () => {
 
     const handleClickClose = () => {
         setOpenModal(false);
+    };
+
+    const searchHandler = () => {
+        window.location.href = `/product/${id}`;
     };
 
     return (
@@ -84,7 +90,7 @@ const MainNavbar = () => {
             </div>
             <div className={css.InputBlock}>
                 <form>
-                    <div className={css.SearchElement}>
+                    <div className={css.SearchElement} onClick={searchHandler}>
                         <img src={SearchIcon} alt="search icon"/>
                     </div>
                     <input
@@ -101,10 +107,10 @@ const MainNavbar = () => {
                                     return (
                                         <li
                                             className={css.AutoCompleteItem}
-                                            onClick={objectClickHandler}
+                                            onClick={(e) => objectClickHandler(e, object.id)}
                                             key={i}
                                         >
-                                            {object}
+                                            {object.title}
                                         </li>
                                     )
                                 }) : null
