@@ -1,8 +1,8 @@
 //импорт модулей
 import React, {useState, useEffect} from 'react';
 import {Breadcrumbs, Rating} from "@mui/material";
-import {Link} from "react-router-dom";
-import {YMaps, Map, ZoomControl, Placemark, Clusterer} from '@pbe/react-yandex-maps';
+import {Link, useParams} from "react-router-dom";
+import {YMaps, Map, ZoomControl, Placemark, Clusterer, GeolocationControl, SearchControl} from '@pbe/react-yandex-maps';
 import {Navigation, Pagination} from "swiper";
 import {Swiper, SwiperSlide} from "swiper/react";
 
@@ -16,27 +16,26 @@ import SliderNextButton from "../HomePage/MainInfo/SliderNextButton/SliderNextBu
 import css from './ProductPage.module.sass'
 import './ProductPageSwiper.sass'
 
-//Импорт изображений
-import Phone1 from './images/Phone1.webp';
-import Phone2 from './images/Phone2.webp';
-import Phone3 from './images/Phone3.webp';
-import Phone4 from './images/Phone4.webp';
-import Phone5 from './images/Phone5.webp';
+
 import Heart from './images/Heart.svg';
+
+import API from "../../../api";
 
 const ProductPage = () => {
     const [lat, setLat] = useState(51.1605);
     const [lng, setLng] = useState(71.4704);
+    const [product, setProduct] = useState({title: '', id: '', category: '', image: '', store: '', price: ''});
+    const [store, setStore] = useState([{lat: 0, lng: 0, description: ''}]);
+
+    const {productId} = useParams();
 
     useEffect(() => {
         async function fetch() {
             try {
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition((position) => {
-                        setLat(position.coords.latitude);
-                        setLng(position.coords.longitude);
-                    });
-                }
+                const res = await API.get(`/products/getProductById/${productId}`);
+                setProduct(res.data);
+                const res2 = await API.get(`/products/getStoresByTitle/${res.data.store}`);
+                setStore(res2.data);
             } catch (e) {
                 console.log(e)
             }
@@ -44,9 +43,6 @@ const ProductPage = () => {
 
         fetch();
     }, []);
-
-    const clusterPoints = [[lat - 0.001, lng - 0.001], [lat - 0.002, lng - 0.002], [lat + 0.001, lng + 0.001],
-        [lat - 0.001, lng + 0.001], [lat - 0.004, lng + 0.010]]
 
     return (
         <>
@@ -58,17 +54,14 @@ const ProductPage = () => {
                             OnDuken
                         </Link>
                         <Link to='/'>
-                            Телефоны
-                        </Link>
-                        <Link to='/map'>
-                            Смартфоны
+                            {product.category}
                         </Link>
                     </Breadcrumbs>
                 </article>
                 <article className={css.ProductCard}>
                     <div className={css.ProductDescription}>
                         <div>
-                            <h1 className={css.ProductName}>Смартфон Apple iPhone 14 128Gb голубой</h1>
+                            <h1 className={css.ProductName}>{product.title}</h1>
                         </div>
                         <div className={css.ProductDetails}>
                             <div>
@@ -80,19 +73,19 @@ const ProductPage = () => {
                                     className='swiper-product'
                                 >
                                     <SwiperSlide className='swiper-slide-product'>
-                                        <img src={Phone1} alt="phone pic"/>
+                                        <img src={product.image} alt="phone pic"/>
                                     </SwiperSlide>
                                     <SwiperSlide className='swiper-slide-product'>
-                                        <img src={Phone2} alt="phone pic"/>
+                                        <img src={product.image} alt="phone pic"/>
                                     </SwiperSlide>
                                     <SwiperSlide className='swiper-slide-product'>
-                                        <img src={Phone3} alt="phone pic"/>
+                                        <img src={product.image} alt="phone pic"/>
                                     </SwiperSlide>
                                     <SwiperSlide className='swiper-slide-product'>
-                                        <img src={Phone4} alt="phone pic"/>
+                                        <img src={product.image} alt="phone pic"/>
                                     </SwiperSlide>
                                     <SwiperSlide className='swiper-slide-product'>
-                                        <img src={Phone5} alt="phone pic"/>
+                                        <img src={product.image} alt="phone pic"/>
                                     </SwiperSlide>
 
                                     <div>
@@ -132,8 +125,9 @@ const ProductPage = () => {
                                 </div>
                                 <div>
                                     <h1>Описание</h1>
-                                    <p>iPhone 14 (и iPhone 14 Plus) — смартфон производства корпорации Apple, работающий на базе операционной системы iOS 16 и процессора Apple A15 Bionic.
-                                        iPhone 14 является базовой моделью 16-го поколения; был представлен 7 сентября 2022 года</p>
+                                    <p>Lorem ipsum dolor sit amet. Ut nobis molestiae ut quidem tenetur aut aperiam
+                                        dolor. Eum temporibus
+                                        tempora et dignissimos quas est quod obcaecati aut consequatur voluptatibu</p>
                                 </div>
                             </div>
                         </div>
@@ -145,8 +139,8 @@ const ProductPage = () => {
                         </div>
                         <div>
                             <p>
-                                <span className={css.HighlightedText}>482 000₸</span>
-                                <span className={css.StrikethroughText}>532 000₸</span></p>
+                                <span className={css.HighlightedText}>{product.price}₸</span>
+                                <span className={css.StrikethroughText}>999 000₸</span></p>
                         </div>
                         <div>
                             <p>Доставка <span className={css.HighlightedText}>26 ноября</span> - бесплатно</p>
@@ -156,14 +150,14 @@ const ProductPage = () => {
                         <div>
                             <p>Характеристики</p>
                             <ul>
-                                <li>Технология NFC: Да</li>
-                                <li>Цвет: голубой</li>
-                                <li>Тип экрана: OLED, Super Retina XDR display</li>
-                                <li>Диагональ: 6.1 дюйм</li>
-                                <li>Размер оперативной памяти: 6 ГБ</li>
-                                <li>Процессор: 6-ядерный Apple A15 Bionic</li>
-                                <li>Объем встроенной памяти: 128 ГБ</li>
-                                <li>Емкость аккумулятора: 3279 мАч</li>
+                                <li>Lorem ipsum dolor sit amet</li>
+                                <li>Lorem ipsum dolor sit amet</li>
+                                <li>Lorem ipsum dolor sit amet</li>
+                                <li>Lorem ipsum dolor sit amet</li>
+                                <li>Lorem ipsum dolor sit amet</li>
+                                <li>Lorem ipsum dolor sit amet</li>
+                                <li>Lorem ipsum dolor sit amet</li>
+                                <li>Lorem ipsum dolor sit amet</li>
                             </ul>
                         </div>
                         <div>
@@ -176,23 +170,28 @@ const ProductPage = () => {
                 </article>
             </section>
             <section>
-                <YMaps className={css.MapBlock}>
-                    <Map width="100%" height="700px" defaultState={{center: [lat, lng], zoom: 15}}>
-                        <Placemark geometry={[lat, lng]} properties={{iconContent: "Я"}}
-                                   options={{preset: "islands#darkGreenIcon"}}/>
-                        <ZoomControl/>
-                        <Clusterer
-                            options={{
-                                preset: "islands#invertedVioletClusterIcons",
-                                groupByCoordinates: false,
-                            }}
-                        >
-                            {clusterPoints.map((coordinates, index) => (
-                                <Placemark key={index} geometry={coordinates}/>
-                            ))}
-                        </Clusterer>
-                    </Map>
-                </YMaps>
+                <center>
+                    <YMaps className={css.MapBlock}>
+                        <Map width="87%" height="700px" defaultState={{center: [lat, lng], zoom: 13}}>
+                            <Placemark geometry={[lat, lng]} properties={{iconContent: "Я"}}
+                                       options={{preset: "islands#darkGreenIcon"}}/>
+                            <ZoomControl/>
+                            <GeolocationControl options={{float: "left"}}/>
+                            <SearchControl options={{float: "right"}}/>
+                            <Clusterer
+                                options={{
+                                    preset: "islands#invertedVioletClusterIcons",
+                                    groupByCoordinates: false,
+                                }}
+                            >
+                                {store.map((shop, index) => (
+                                    <Placemark properties={{iconContent: product.store, balloonContent: shop.description}}
+                                               key={index} geometry={[shop.lat, shop.lng]}/>
+                                ))}
+                            </Clusterer>
+                        </Map>
+                    </YMaps>
+                </center>
             </section>
             <PopularReviews text="Отзывы покупателей"/>
             <PopularModels text="С этим товаром покупают"/>
