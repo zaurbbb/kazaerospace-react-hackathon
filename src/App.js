@@ -6,11 +6,12 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Header from './components/elements/Header/Header';
 import Footer from './components/elements/Footer/Footer';
 import HomePage from './components/pages/HomePage/HomePage';
+import LogoutPage from "./components/pages/LogoutPage/LogoutPage";
+import ProductPage from "./components/pages/ProductPage/ProductPage";
+import CatalogPage from "./components/pages/CatalogPage/CatalogPage";
 
 //импорт стилей
 import './app.sass'
-import LogoutPage from "./components/pages/LogoutPage/LogoutPage";
-import ProductPage from "./components/pages/ProductPage/ProductPage";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
                 <Route path="/" element={<HomePage/>}/>
                 <Route path="/logout" element={<LogoutPage/>}/>
                 <Route path="/map" element={<ProductPage/>}/>
+                <Route path="/catalog" element={<CatalogPage/>}/>
             </Routes>
         </main>
         <Footer/>
