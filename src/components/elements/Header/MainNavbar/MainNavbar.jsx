@@ -84,9 +84,11 @@ const MainNavbar = () => {
                 </NavLink>
             </div>
             <div className={css.CatalogBlock}>
+                <NavLink to='/catalog'>
                 <button className='button button_primary'>
                     <img src={CatalogIcon} alt="icon"/> Каталог
                 </button>
+                </NavLink>
             </div>
             <div className={css.InputBlock}>
                 <form>
