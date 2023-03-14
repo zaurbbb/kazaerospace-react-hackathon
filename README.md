@@ -9,10 +9,8 @@
 
 ## Description
 
-[**OnDuken**](https://github.com/Bioneisme/kazaerospace_hackathon_backend) - Front-End part of platform for finding products in various stores and
+[**OnDuken**](https://github.com/Bioneisme/onduken_hackathon_backend) - Marketplace for finding products in various stores and
 view stores on the map.
-
-Live demo of Front-End part: https://zaurbbb.github.io/kazaerospace-react-hackathon/
 
 *The technical task was provided by [KazAeroSpace](https://kazaerospace.kz/), during [AITUHackDay: GIS Technologies](http://hackaton.astanait.edu.kz/).*
 
@@ -24,11 +22,11 @@ It's mandatory to install [NodeJS](https://nodejs.org/en/download/). After open 
 
 - Clone the latest version
 ```
- git clone https://github.com/zaurbbb/kazaerospace-react-hackathon.git
+ git clone https://github.com/zaurbbb/onduken-react-hackathon
 ```
 - Change directory to project's folder
 ```
- cd kazaerospace-react-hackathon
+ cd onduken-react-hackathon 
 ```
 - Install dependencies
 ```
